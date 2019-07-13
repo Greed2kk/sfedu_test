@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Подробная информация{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .captions { font-size: 15pt; font-weight: 600; text-align: left; }
+    </style>
+
+    <div class="example-wrapper">
+        <h1>Публичная страница. <br> Подробная информация.</h1>
+        <table border="1">  
+            <caption class="captions">Подробная информция о подразделении </caption>
+            <tr>
+                <th>№</th>
+                <th>Наименование</th>
+                <th>Адрес</th> 
+                <th>Директор</th>  
+            </tr>
+            {% for subdivision in subdivisions %}
+                {% if subdivision.id == subdivision_id %}
+                    <tr>
+                        <td> {{ subdivision.id }} </td>
+                        <td> {{ subdivision.title }}</td>
+                        <td> {{ subdivision.address }}</td> 
+                        <td> {{ subdivision.director }}</td> 
+
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <form action="/">
+            <button type="submit">На главную</button>
+        </form>
+    {% endblock %}

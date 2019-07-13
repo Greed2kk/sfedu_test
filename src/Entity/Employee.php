@@ -24,10 +24,10 @@ class Employee
     /**
      * @ORM\Column(type="datetime")
      */
-    private $date_birth;
+    private $bdate;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $photo;
 
@@ -48,14 +48,14 @@ class Employee
         return $this;
     }
 
-    public function getDateBirth(): ?\DateTimeInterface
+    public function getBdate(): ?\DateTimeInterface
     {
-        return $this->date_birth;
+        return $this->bdate;
     }
 
-    public function setDateBirth(\DateTimeInterface $date_birth): self
+    public function setBdate(\DateTimeInterface $bdate): self
     {
-        $this->date_birth = $date_birth;
+        $this->bdate = $bdate;
 
         return $this;
     }
@@ -65,7 +65,7 @@ class Employee
         return $this->photo;
     }
 
-    public function setPhoto(?string $photo): self
+    public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
 

@@ -6,15 +6,21 @@ use App\Entity\Employee;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Expression\Core\Type\FileType;
+use Symfony\Component\Expression\Core\Type\DateType;
+use Symfony\Component\Expression\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 class EmployeeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fio')
-            ->add('date_birth')
-            ->add('photo')
+            ->add('fio', TextType::class, ['label' => 'fio'])
+            ->add('bdate', DateType::class, ['label' => 'bdate'])
+            ->add('photo', FileType::class, ['label' => 'photo'])
+            ->add('save', SubmitType::class, ['attr' => ['class' => 'save']])
         ;
     }
 

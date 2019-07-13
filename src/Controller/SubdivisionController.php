@@ -14,6 +14,7 @@ class SubdivisionController extends AbstractController
     {
         return $this->render('subdivision/index.html.twig', [
             'controller_name' => 'SubdivisionController',
+            
         ]);
     }
 }
