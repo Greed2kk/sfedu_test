@@ -1,0 +1,23 @@
+easy_admin:
+    entities:
+      Subdivision:
+        class: App\Entity\Subdivision
+        list:
+            paginator:
+                 - {name: 'next', label: 'Вперед'}
+                    
+            title: "Подразделения"
+            actions:
+                - { name: 'edit', icon: 'pencil', label: 'Изменить', css_class: 'btn btn-primary'}
+                - { name: 'delete', icon: 'trash', label: 'Удалить', css_class: 'btn btn-danger'}
+                - { name: 'new', icon: 'plus', label: 'Добавить', css_class: 'btn btn-succes'}
+                - { name: 'search', label: 'Поиск'}
+              
+            
+        form:
+            fields:
+                - {property: 'title'}
+                - {property: 'address'}
+                - {property: 'director'}
+           
+                    

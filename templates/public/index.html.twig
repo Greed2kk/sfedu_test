@@ -3,12 +3,17 @@
 {% block title %}Публичная страница{% endblock %}
 
 {% block body %}
-
+    <div class="text-right">
+   <form action="/admin" >
+                    <button class="btn btn-info float-right" type="submit">Перейти в админ-панель</button>
+                </form>
+        </div>
   <div class="container bgcont center-block">
         <div class="center-block">
         <h1>Публичная страница</h1>
          <div class = "row justify-content-center align-items-center">
                 <div class="captions">Таблицы: Сотрудники и Подразделения</div> 
+              
             </div>
         <div class="row justify-content-center align-items-center">
           
@@ -45,5 +50,7 @@
                     </tr>
                 {% endfor %}
             </table>
+            <div class = "row justify-content-center align-items-center">
+               
         </div>
     {% endblock %}

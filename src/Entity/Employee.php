@@ -22,7 +22,7 @@ class Employee
     private $fio;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $bdate;
 
@@ -53,7 +53,7 @@ class Employee
         return $this->bdate;
     }
 
-    public function setBdate(\DateTimeInterface $bdate): self
+    public function setBdate(\DateInterface $bdate): self
     {
         $this->bdate = $bdate;
 

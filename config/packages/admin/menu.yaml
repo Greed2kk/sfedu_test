@@ -1,0 +1,18 @@
+easy_admin:
+    user:
+        display_name: true
+        display_avatar: false
+    design:
+        menu:
+             - {entity: 'Employee', icon: 'user', label: 'Сотрудники'}
+             - {entity: 'Subdivision', icon: 'briefcase', label: 'Подразделения'}
+     
+
+        
+        
+        
+        
+        
+        
+        
+        

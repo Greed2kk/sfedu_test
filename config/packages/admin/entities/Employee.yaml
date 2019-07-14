@@ -1,0 +1,20 @@
+easy_admin:
+    entities:
+      Employee:
+        class: App\Entity\Employee
+        paginator:
+                - {name: 'next', label: 'Вперед'}
+        list:          
+            title: "Сотрудники"
+            actions:
+                - { name: 'edit', icon: 'pencil', label: 'Изменить', css_class: 'btn btn-primary'}
+                - { name: 'delete', icon: 'trash', label: 'Удалить', css_class: 'btn btn-danger'}
+                - { name: 'new', icon: 'plus', label: 'Добавить', css_class: 'btn btn-succes'}
+                - { name: 'search', label: 'Поиск'}
+          
+        form:
+            fields:
+              - {property: 'fio'}
+              - {property: 'bdate'}
+              - {property: 'photo'}
+            
