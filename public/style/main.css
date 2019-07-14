@@ -1,0 +1,31 @@
+
+.captions { font-size: 15pt; font-weight: 600; text-align: center; }
+.btn {margin-top: 10px;}
+.table-bordered { table-border: 3}
+h1 { text-align: center}
+
+               
+
+
+
+
+table {
+    width: auto;
+    height: auto;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+td {
+    padding: 5px;
+    padding-right: 10px;
+    border: 1px solid black;
+}
+
+th {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+

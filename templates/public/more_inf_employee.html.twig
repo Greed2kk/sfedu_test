@@ -3,35 +3,38 @@
 {% block title %}Подробная информация{% endblock %}
 
 {% block body %}
-    <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-        .captions { font-size: 15pt; font-weight: 600; text-align: left; }
-    </style>
 
-    <div class="example-wrapper">
-        <h1>Публичная страница. <br> Подробная информация.</h1>
-        <table border="1">  
-            <caption class="captions">Подробная информция о сотруднике</caption>
-            <tr>
-                <th>№</th>
-                <th>Ф.И.О</th>
-                <th>Дата рождения</th> 
-                <th>Фото</th>  
-            </tr>
-            {% for employee in employees %}
-                {% if employee.id == employeer_id %}
-                    <tr>
-                        <td> {{ employee.id }} </td>
-                        <td> {{ employee.fio }}</td>
-                        <td> {{ employee.bdate|date("d/m/Y") }}</td> 
-                        <td> {{ employee.photo }}</td> 
-
+    <div class="container bgcont center-block">
+        <div class="center-block">
+            <h1>Публичная страница. <br> Подробная информация.</h1>
+            <div class = "row justify-content-center align-items-center">
+                <div class="captions">Сотрудник</div> 
+            </div>
+            <div class = "row justify-content-center align-items-center">
+                <table class="table-bordered table-hover">  
+                    <tr class="table-primary">
+                        <th>№</th>
+                        <th>Ф.И.О</th>
+                        <th>Дата рождения</th> 
+                        <th>Фото</th>  
                     </tr>
-                {% endif %}
-            {% endfor %}
-        </table>
-        <form action="/">
-            <button type="submit">На главную</button>
-        </form>
-    {% endblock %}
+                    {% for employee in employees %}
+                        {% if employee.id == employeer_id %}
+                            <tr class="table-secondary">
+                                <td> {{ employee.id }} </td>
+                                <td> {{ employee.fio }}</td>
+                                <td> {{ employee.bdate|date("d/m/Y") }}</td> 
+                                <td> {{ employee.photo }}</td> 
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+            </div>
+            <div class = "row justify-content-center align-items-center">
+                <form action="/">
+                    <button class="btn btn-primary" type="submit">На главную</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
