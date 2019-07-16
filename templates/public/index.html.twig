@@ -4,53 +4,46 @@
 
 {% block body %}
     <div class="text-right">
-   <form action="/admin" >
-                    <button class="btn btn-info float-right" type="submit">Перейти в админ-панель</button>
-                </form>
-        </div>
-  <div class="container bgcont center-block">
+        <form action="/admin" >
+            <button class="btn btn-info float-right" type="submit">Перейти в админ-панель</button>
+        </form>
+    </div>
+    <div class="container bgcont center-block">
         <div class="center-block">
-        <h1>Публичная страница</h1>
-         <div class = "row justify-content-center align-items-center">
-                <div class="captions">Таблицы: Сотрудники и Подразделения</div> 
-              
-            </div>
-        <div class="row justify-content-center align-items-center">
-          
-      
-        
-            <table class="table-bordered table-hover">  
-            
-                <tr class="table-primary">
-                    <th scope="col">№</th>
-                    <th scope="col">Ф.И.О</th>
-                    <th scope="col">Действие</th>
-                </tr>
-                {% for key, employee in employees %}
-                    <tr class="table-secondary">
-                        <th scope="row"> {{ key+1 }} </th>
-                        <td> {{ employee.fio }}</td>
-                        <td> <a href="{{ path('more_info_employee', { 'employee_id': employee.id }) }}">Подробнее</td> 
-                    </tr>
-                {% endfor %}
-            </table>
-         
-            <table class="table-bordered table-hover">  
-                
-                <tr class="table-primary">
-                    <th scope="col">№</th>
-                    <th scope="col">Наименование</th>
-                    <th scope="col">Действие</th>
-                </tr>
-                {% for key, subdivision in subdivisions %}
-                    <tr class="table-secondary">
-                        <th scope="row"> {{ key+1 }} </th>
-                        <td> {{ subdivision.title }} </td> 
-                        <td> <a href="{{ path('more_info_subdivision', { 'subdivision_id': subdivision.id }) }}">Подробнее</td> 
-                    </tr>
-                {% endfor %}
-            </table>
+            <h1>Публичная страница</h1>
             <div class = "row justify-content-center align-items-center">
-               
-        </div>
-    {% endblock %}
+                <div class="captions">Таблицы: Сотрудники и Подразделения</div>              
+            </div>
+            <div class="row justify-content-center align-items-center">  
+                <table class="table-bordered table-hover">        
+                    <tr class="table-primary">
+                        <th scope="col">№</th>
+                        <th scope="col">Ф.И.О</th>
+                        <th scope="col">Действие</th>
+                    </tr>
+                    {% for key, employee in employees %}
+                        <tr class="table-secondary">
+                            <th scope="row"> {{ key+1 }} </th>
+                            <td> {{ employee.fio }}</td>
+                            <td> <a href="{{ path('more_info_employee', { 'employee_id': employee.id }) }}">Подробнее</td> 
+                        </tr>
+                    {% endfor %}
+                </table>      
+                <table class="table-bordered table-hover">               
+                    <tr class="table-primary">
+                        <th scope="col">№</th>
+                        <th scope="col">Наименование</th>
+                        <th scope="col">Действие</th>
+                    </tr>
+                    {% for key, subdivision in subdivisions %}
+                        <tr class="table-secondary">
+                            <th scope="row"> {{ key+1 }} </th>
+                            <td> {{ subdivision.title }} </td> 
+                            <td> <a href="{{ path('more_info_subdivision', { 'subdivision_id': subdivision.id }) }}">Подробнее</td> 
+                        </tr>
+                    {% endfor %}
+                </table>
+                <div class = "row justify-content-center align-items-center">
+
+                </div>
+            {% endblock %}

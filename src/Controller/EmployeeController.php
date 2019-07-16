@@ -19,8 +19,6 @@ class EmployeeController extends AbstractController
          return $this->render('employee/more_inf_employee.html.twig', [
                 'employees' => $employees,
               'employeer_id' => $employee_id
-         ]);
-     
+         ]);   
     } 
-    
 }

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+    <div class="wrapper">
+        <div id="formContent">
+
+            <form action="{{ path('login') }}" method="POST"> 
+                <div class="form-group">   
+                    <h1> Логин </h1>
+                    <input type="text" 
+                           id="_username" 
+                           name="_username" 
+                           class="fadeIn third" 
+                           placeholder="admin" 
+                           required autofocus> 
+                    <h1> Пароль </h1>
+                    <input type="password" 
+                           id="_password" 
+                           name="_password" 
+                           class="fadeIn second" 
+                           placeholder="admin" 
+                           required> 
+                    <button class="btn btn-success" type="submit">Войти</button>
+                    <form action="/">
+                        <button class="btn btn-warning" type="submit">На главную</button>
+                    </form>
+                </div>
+            </form> 
+        </div>
+
+    </div>
+{% endblock %}

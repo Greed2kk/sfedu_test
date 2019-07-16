@@ -12,8 +12,12 @@ easy_admin:
                 - { name: 'delete', icon: 'trash', label: 'Удалить', css_class: 'btn btn-danger'}
                 - { name: 'new', icon: 'plus', label: 'Добавить', css_class: 'btn btn-succes'}
                 - { name: 'search', label: 'Поиск'}
-              
-            
+        edit:
+            title: "Изменить данные подразделение"
+            actions:
+#                - { name: 'save', label: 'Сохранить', css_class: 'btn btn-succes'}
+                - { name: 'list', icon: 'remove', label: 'Отмена', css_class: 'btn btn-warning'}
+                - { name: 'delete', icon: 'trash', label: 'Удалить', css_class: 'btn btn-danger'}          
         form:
             fields:
                 - {property: 'title'}
