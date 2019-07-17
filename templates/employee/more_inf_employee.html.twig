@@ -24,7 +24,7 @@
                                 <td> {{ employee.id }} </td>
                                 <td> {{ employee.fio }}</td>
                                 <td> {{ employee.bdate|date("d/m/Y") }}</td> 
-                                <td> {{ employee.photo }}</td> 
+                                <td> <img src="\uploads\images\products\{{ employee.image }}" width="128" height="128" alt="Фото"></td> 
                             </tr>  
                         {% endif %}
                     {% endfor %}
