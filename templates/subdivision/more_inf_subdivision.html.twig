@@ -1,17 +1,14 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Подробная информация{% endblock %}
-
 {% block body %}
-
     <div class="container bgcont center-block">
         <div class="center-block">
             <h1>Публичная страница. <br> Подробная информация.</h1>
-            <div class = "row justify-content-center align-items-center">
-                <div class="captions">Подразделение</div>
+            <div class = "row justify-content-center align-items-center">    
             </div>
             <div class = "row justify-content-center align-items-center">
                 <table class="table-bordered table-hover">  
+                    <caption>Подразделение</caption>
                     <tr class="table-primary">
                         <th>№</th>
                         <th>Наименование</th>
@@ -29,7 +26,6 @@
                         {% endif %}
                     {% endfor %}
                 </table>
-
             </div>
             <div class = "row justify-content-center align-items-center">
                 <form action="/">
