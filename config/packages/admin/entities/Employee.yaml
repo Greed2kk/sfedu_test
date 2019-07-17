@@ -11,6 +11,11 @@ easy_admin:
                 - { name: 'delete', icon: 'trash', label: 'Удалить', css_class: 'btn btn-danger'}
                 - { name: 'new', icon: 'plus', label: 'Добавить', css_class: 'btn btn-succes'}
                 - { name: 'search', label: 'Поиск'}
+            fields:
+                 - {property: 'id'}
+                 - {property: 'fio', label: 'Ф.И.О'}
+                 - {property: 'bdate', label: 'Дата рождения'}
+                 - { property: 'image', type: 'image', base_path: '%app.path.product_images%', label: 'Фото' }
         edit:
             title: "Изменить данные сотрудника"
             actions:
@@ -21,8 +26,17 @@ easy_admin:
             actions:
                 - { name: 'cancel', icon: 'plus', label: 'Добавить', css_class: 'btn btn-succes'}
         form:
+            title: "Добавить сотрудника"
             fields:
-              - {property: 'fio'}
-              - {property: 'bdate'}
-              - {property: 'photo'}
+              - {property: 'fio', label: 'Ф.И.О'}
+              - {property: 'bdate', default: '0000-00-00', type: 'birthday', label: 'Дата рождения'}
+              - {property: 'imageFile', type: 'file', label: 'Фото'}
+            
+            # ...
+        show:
+           fields:
+               - {property: 'fio', label: 'Ф.И.О'}
+               - {property: 'bdate', label: 'Дата рождения', default: '0000-00-00'}
+               - { property: 'image', type: 'image', base_path: '%app.path.product_images%', label: 'Фото' }
+
             
