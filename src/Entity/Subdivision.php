@@ -5,7 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\SubdivisionRepository")
  */
 class Subdivision
 {
@@ -27,9 +27,9 @@ class Subdivision
     private $address;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Employee", inversedBy="subdivisions")
      */
-    private $director;
+    private $fk_dir;
 
     public function getId(): ?int
     {
@@ -60,15 +60,16 @@ class Subdivision
         return $this;
     }
 
-    public function getDirector(): ?string
+    public function getFkDir(): ?Employee
     {
-        return $this->director;
+        return $this->fk_dir;
     }
 
-    public function setDirector(string $director): self
+    public function setFkDir(?Employee $fk_dir): self
     {
-        $this->director = $director;
+        $this->fk_dir = $fk_dir;
 
         return $this;
     }
+ 
 }

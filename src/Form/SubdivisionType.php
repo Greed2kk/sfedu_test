@@ -15,7 +15,7 @@ class SubdivisionType extends AbstractType
         $builder
             ->add('title', TextType::class, ['label' => 'title'])
             ->add('address', TextType::class, ['label' => 'address'])
-            ->add('director', TextType::class, ['label' => 'director'])
+            ->add('fk_dir', TextType::class, ['label' => 'FK_dir'])
             ->add('save', SubmitType::class, ['attr' => ['class' => 'save']])
         ;
     }

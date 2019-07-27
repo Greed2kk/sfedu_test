@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block title %}Админ страница{% endblock %}
+{% block body %}
+    <div class="container bgcont center-block">
+        <div class="center-block">
+            <form action="/" >
+                <button class="btn btn-success" type="submit">На главную</button>
+            </form>
+            <h1>Админ страница</h1>
+            <div class = "row justify-content-center align-items-center">
+                <div class="captions">Таблицы: Сотрудники и Подразделения</div>              
+            </div>
+            <div class="row justify-content-center align-items-center">  
+                
+                <table class="table-bordered table-hover">   
+                    <caption>Сотрудники</caption>
+                    <tr class="table-primary">
+                        <th scope="col">№</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Ф.И.О</th>
+                        <th scope="col">Дата рождения</th>
+                        <th scope="col">Фото</th>
+                        <th scope="col">Действие</th>
+                        <th scope="col">Действие</th>
+                    </tr>
+                    {% for key, employee in employees %}
+                        <tr class="table-secondary">
+                            <th scope="row"> {{ key+1 }} </th>
+                            <td> {{ employee.id }}</td>
+                            <td> {{ employee.fio }}</td>
+                            <td> {{ employee.bdate|date("d/m/Y") }}</td>
+                            <td> <img src="\uploads\images\products\{{ employee.image }}" width="64" height="64" alt="Фото"></td> 
+                            <td> <a href="#">Удалить</td>
+                            <td> <a href="#">Изменить</td> 
+                        </tr>
+                    {% endfor %}
+                </table>   
+                 <div class="text-right">
+                    <form action="/admin" >
+                        <button class="btn btn-success" type="submit">Добавить новое подразделение</button>
+                    </form>
+                </div>
+                <div class = "row justify-content-center align-items-center">
+                    <table class="table-bordered table-hover">  
+                        <caption>Подразделения</caption>
+                        <tr class="table-primary">
+                            <th scope="col">№</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Наименование</th>
+                            <th scope="col">Адрес</th>
+                            <th scope="col">ID Директора</th>
+                            <th scope="col">Ф.И.О Директора</th>
+                            <th scope="col">Действие</th>
+                            <th scope="col">Действие</th>
+                        </tr>
+                        {% for key, subdivision in subdivisions %}
+                            <tr class="table-secondary">
+                                <th scope="row"> {{ key+1 }} </th>
+                                <td> {{ subdivision.id }} </td> 
+                                <td> {{ subdivision.title }} </td> 
+                                <td> {{ subdivision.address }} </td> 
+                                <td>{{ subdivision.FkDir.id }}</td>
+                                <td>{{ subdivision.FkDir.Fio }}</td>
+                                <td> <a href="#">Удалить</td>
+                                <td> <a href="#">Изменить</td>          
+                            {% endfor %}
+                        </tr>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <form action="/admin" >
+                        <button class="btn btn-success" type="submit">Добавить новое подразделение</button>
+                    </form>
+                </div>
+            {% endblock %}

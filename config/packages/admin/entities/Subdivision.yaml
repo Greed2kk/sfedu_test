@@ -7,7 +7,7 @@ easy_admin:
                 - {property: 'id'}
                 - {property: 'title', label: 'Наименование'}
                 - {property: 'address', label: 'Адрес'}
-                - {property: 'director', label: 'Директор'}
+                - {property: 'fk_dir', label: 'Директор ИД'}
            
             paginator:
                  - {name: 'next', label: 'Вперед'}
@@ -21,14 +21,14 @@ easy_admin:
         edit:
             title: "Изменить данные подразделение"
             actions:
-#                - { name: 'save', label: 'Сохранить', css_class: 'btn btn-succes'}
+#               - { name: 'save', label: 'Сохранить', css_class: 'btn btn-succes'}
                 - { name: 'list', icon: 'remove', label: 'Отмена', css_class: 'btn btn-warning'}
-                - { name: 'delete', icon: 'trash', label: 'Удалить', css_class: 'btn btn-danger'}          
+                - { name: 'delete', icon: 'trash', label: 'Удалить', css_class: 'btn btn-danger'}  
         form:
             title: "Добавить подразделение"
             fields:   
                 - {property: 'title', label: 'Наименование'}
                 - {property: 'address', label: 'Адрес'}
-                - {property: 'director', label: 'Директор'}
+                - {property: 'fk_dir', label: 'ДиректорИД'}
            
                     

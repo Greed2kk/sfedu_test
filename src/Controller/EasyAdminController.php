@@ -1,25 +1,38 @@
 <?php
 
 namespace App\Controller;
-
 use App\Entity\Employee;
 use App\Entity\Subdivision;
-
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class EasyAdminController extends AbstractController
 {
-    /**
-     * @Route("/easy/admin", name="easy_admin")
+//    /**
+//     * @Route("/easy/admin", name="easy_admin")
+//     */
+//    public function index()
+//    {
+//        return $this->render('easy_admin/index.html.twig', [
+//            'controller_name' => 'EasyAdminController',
+//        ]);
+//    }
+//   
+        /**
+     * @Route("/admin", name="admin")
      */
     public function index()
     {
-        return $this->render('easy_admin/index.html.twig', [
-            'controller_name' => 'EasyAdminController',
+         $em = $this->getDoctrine()->getManager();
+        $employees = $em->getRepository(Employee::class)->findAll();
+        $subdivisions = $em->getRepository(Subdivision::class)->findAll();
+        return $this->render('admin/main.admin.html.twig', [
+            'controller_name' => 'AdminController',
+            'employees' => $employees,
+            'subdivisions' => $subdivisions,
+         
         ]);
     }
         /**

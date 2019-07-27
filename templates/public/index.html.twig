@@ -38,11 +38,13 @@
                             <th scope="col">№</th>
                             <th scope="col">Наименование</th>
                             <th scope="col">Действие</th>
+                      
                         </tr>
                         {% for key, subdivision in subdivisions %}
                             <tr class="table-secondary">
                                 <th scope="row"> {{ key+1 }} </th>
                                 <td> {{ subdivision.title }} </td> 
+                               
                                 <td> <a href="{{ path('more_info_subdivision', { 'subdivision_id': subdivision.id }) }}">Подробнее</td> 
                             </tr>
                         {% endfor %}

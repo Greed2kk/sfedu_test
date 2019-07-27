@@ -13,7 +13,8 @@
                         <th>№</th>
                         <th>Наименование</th>
                         <th>Адрес</th> 
-                        <th>Директор</th>  
+                        <th>Директор ИД</th>
+                        <th>Директор Ф.И.О</th>
                     </tr>
                     {% for subdivision in subdivisions %}
                         {% if subdivision.id == subdivision_id %}
@@ -21,10 +22,12 @@
                                 <td> {{ subdivision.id }} </td>
                                 <td> {{ subdivision.title }}</td>
                                 <td> {{ subdivision.address }}</td> 
-                                <td> {{ subdivision.director }}</td> 
+                                <td> {{ empId }}</td>
+                                <td> {{ empFio }}</td> 
                             </tr>
                         {% endif %}
                     {% endfor %}
+                    
                 </table>
             </div>
             <div class = "row justify-content-center align-items-center">
