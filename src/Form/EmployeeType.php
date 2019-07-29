@@ -1,15 +1,16 @@
 <?php
-
 namespace App\Form;
 
 use App\Entity\Employee;
 use Symfony\Component\Form\AbstractType;
+//use Symfony\Component\Expression\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Expression\Core\Type\FileType;
-use Symfony\Component\Expression\Core\Type\DateType;
-use Symfony\Component\Expression\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+//use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+
 
 
 class EmployeeType extends AbstractType
@@ -17,10 +18,9 @@ class EmployeeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fio', TextType::class, ['label' => 'fio'])
-            ->add('bdate', DateType::class, ['label' => 'bdate'])
-            ->add('photo', FileType::class, ['label' => 'photo'])
-            ->add('save', SubmitType::class, ['attr' => ['class' => 'save']])
+            ->add('fio', TextType::class, ['label' => 'Ф.И.О'])
+            ->add('bdate', BirthdayType::class, ['label' => 'Дата рождения'])
+            ->add('imageFile', FileType::class, ['label' => 'Фото'])             
         ;
     }
 
