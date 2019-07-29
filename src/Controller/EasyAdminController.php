@@ -61,5 +61,4 @@ class EasyAdminController extends AbstractController {
         // Override: Use an hour range between 08:00AM and 11:00PM
         $resolver->setDefault('hours', range(8, 23));
     }
-
 }

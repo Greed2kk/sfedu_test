@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\EmployeeType;
 
+
 class EmployeeController extends AbstractController {
 
     /**
@@ -36,7 +37,7 @@ class EmployeeController extends AbstractController {
     /**
      * @Route("/admin/emp_add", name="emp_add")
      */
-    public function add_emp(Request $request) {
+    public function addEmp(Request $request) {
         $emp = new Employee();
 
         $form = $this->createForm(EmployeeType::class, $emp, [
@@ -44,8 +45,9 @@ class EmployeeController extends AbstractController {
         ]);
         if ($request->isMethod('POST')) {
             $form->submit($request->request->get($form->getId()));
-            var_dump($form->isSubmitted()); //FALSE 
+            
             if ($form->isSubmitted() && $form->isValid()) {
+                
                 $emp = $form->getData();
                 $emp->setUpdated_at(new \DateTime('now'));
                 $em = $this->getDoctrine()->getManager();
@@ -69,9 +71,7 @@ class EmployeeController extends AbstractController {
             ]),
             'method' => 'POST',
         ]);
-
         $form->handleRequest($request);
-
         if ($form->isSubmitted()) {
             $employee = $form->getData();
             $employee->setUpdated_at(new \DateTime('now'));

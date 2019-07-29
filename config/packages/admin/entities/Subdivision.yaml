@@ -7,7 +7,7 @@ easy_admin:
                 - {property: 'id'}
                 - {property: 'title', label: 'Наименование'}
                 - {property: 'address', label: 'Адрес'}
-                - {property: 'FkDirId', label: 'Директор ИД'}
+                - {property: 'fk_dir_id', label: 'Директор ИД', trans: true}
            
             paginator:
                  - {name: 'next', label: 'Вперед'}
@@ -29,6 +29,6 @@ easy_admin:
             fields:   
                 - {property: 'title', label: 'Наименование'}
                 - {property: 'address', label: 'Адрес'}
-                - {property: 'FkDirId', label: 'ДиректорИД'}
+                - {property: 'fk_dir_id', label: 'ДиректорИД', trans: true  }
            
                     

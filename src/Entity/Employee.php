@@ -42,7 +42,7 @@ class Employee
     private $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Subdivision", mappedBy="fk_dir")
+     * @ORM\OneToMany(targetEntity="App\Entity\Subdivision", mappedBy="fk_dir", cascade="all", orphanRemoval=true)
      */
     private $subdivisions;
 
